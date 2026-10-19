@@ -1,0 +1,67 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cat *)",
+      "Bash(tail *)",
+      "Bash(head *)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(wc *)",
+      "Bash(date *)",
+      "Bash(date)",
+      "Bash(cd *)",
+      "Bash(git status *)",
+      "Bash(git status)",
+      "Bash(git log *)",
+      "Bash(git log)",
+      "Bash(git diff *)",
+      "Bash(git diff)",
+      "Bash(git show *)",
+      "Bash(git branch *)",
+      "Bash(git branch)",
+      "Bash(git tag *)",
+      "Bash(./mvnw *)",
+      "Bash(npm test *)",
+      "Bash(npm test)",
+      "Bash(npm run *)",
+      "Bash(npx jest *)",
+      "Bash(npx vitest *)",
+      "Bash(docker compose ps *)",
+      "Bash(docker compose ps)",
+      "Bash(docker compose logs *)",
+      "Bash(docker compose -f infra/docker-compose.yml ps *)",
+      "Bash(docker compose -f infra/docker-compose.yml logs *)",
+      "Bash(docker ps *)",
+      "Bash(docker ps)",
+      "Bash(curl *)",
+      "Edit(/studio/**)"
+    ],
+    "ask": [
+      "mcp__intellij__execute_sql_query"
+    ],
+    "deny": [
+      "Bash(git push --force *)",
+      "Bash(git push -f *)",
+      "Bash(rm -rf *)",
+      "mcp__intellij__apply_patch",
+      "mcp__intellij__create_new_file",
+      "mcp__intellij__reformat_file",
+      "mcp__intellij__rename_refactoring",
+      "mcp__intellij__execute_terminal_command",
+      "mcp__intellij__execute_tool"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write|MultiEdit|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR\"/.claude/hooks/proteggi.py"
+          }
+        ]
+      }
+    ]
+  }
+}

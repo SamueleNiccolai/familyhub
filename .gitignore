@@ -1,0 +1,45 @@
+# --- study flag (created by /sblocca, removed by /chiudi) ---
+studio/.sblocca
+
+# --- private study notes (the repo is public) ---
+studio/*.privato.md
+
+# --- Claude Code personal overrides ---
+.claude/settings.local.json
+CLAUDE.local.md
+
+# --- secrets ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Java / Maven ---
+target/
+*.class
+*.log
+.mvn/wrapper/maven-wrapper.jar
+
+# --- Node / Expo / Vite ---
+node_modules/
+.expo/
+.expo-shared/
+dist/
+build/
+web-build/
+*.tsbuildinfo
+coverage/
+
+# --- Terraform ---
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# --- IDE / OS ---
+.idea/
+*.iml
+.vscode/
+.DS_Store
+Thumbs.db
